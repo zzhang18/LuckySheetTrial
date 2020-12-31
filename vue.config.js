@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: 'https://zzhang18.github.io/LuckySheetTrial/NeoVue',
+  publicPath: '/LuckySheetTrial',
   outputDir: 'docs',
   lintOnSave: false
 }
