@@ -6,9 +6,11 @@ export var testaaa = function (){
   console.log("...");
 }
 export var exportExcel = function(luckysheet, value) {
+  
   // 参数为luckysheet.getluckysheetfile()获取的对象
   // 1.创建工作簿，可以为工作簿添加属性
   const workbook = new Excel.Workbook()
+
   // 2.创建表格，第二个参数可以配置创建什么样的工作表
   if (Object.prototype.toString.call(luckysheet) === '[object Object]') {
     luckysheet = [luckysheet]
@@ -17,6 +19,9 @@ export var exportExcel = function(luckysheet, value) {
     if (table.data.length === 0) return  true
     // ws.getCell('B2').fill = fills.
     const worksheet = workbook.addWorksheet(table.name)
+      
+    worksheet.properties.defaultRowHeight = 15;
+    worksheet.properties.defaultColWidth = 8.43;
     // console.log('luckysheet worksheet',worksheet);
     const merge = (table.config && table.config.merge) || {}
     const borderInfo = (table.config && table.config.borderInfo) || {}

@@ -50,9 +50,24 @@ export default {
     // In some cases, you need to use $nextTick
     // this.$nextTick(() => {
           $(function () {
-            luckysheet.create({
-              container: "luckysheet",
-            });
+            var options = {                
+                container: 'luckysheet', //luckysheet is the container id
+                column: 26, //Number of columns
+                // row: 5, //number of rows
+                
+                defaultRowHeight: 20, //自定义行高
+                defaultColWidth:  64//自定义列宽
+                // config: {
+                //   rowlen: 100, //表格行高
+                //   columnlen:{
+                //     0: 10,
+                //     1: 15,
+                //     2: 20
+                //   }, //表格列宽
+                // },
+            }
+
+            luckysheet.create(options)
           });
 
     // });
@@ -80,13 +95,15 @@ export default {
             }
             window.luckysheet.destroy();
 
-            window.luckysheet.create({
+            var options = {                
                 container: 'luckysheet', //luckysheet is the container id
                 showinfobar:false,
                 data:exportJson.sheets,
                 title:exportJson.info.name,
-                userInfo:exportJson.info.name.creator
-            });
+                userInfo:exportJson.info.name.creator,
+            }
+
+            luckysheet.create(options)
         });
     },
     selectExcel(evt){
