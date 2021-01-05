@@ -52,6 +52,7 @@ export default {
           $(function () {
             var options = {                
                 container: 'luckysheet', //luckysheet is the container id
+                title: 'Neo Luckysheet',
                 column: 26, //Number of columns
                 // row: 5, //number of rows
                 
