@@ -20,8 +20,8 @@ export var exportExcel = function(luckysheet, value) {
     // ws.getCell('B2').fill = fills.
     const worksheet = workbook.addWorksheet(table.name)
       
-    worksheet.properties.defaultRowHeight = 15;
-    worksheet.properties.defaultColWidth = 8.43;
+    // worksheet.properties.defaultRowHeight = 15;
+    // worksheet.properties.defaultColWidth = 8.43;
     // console.log('luckysheet worksheet',worksheet);
     const merge = (table.config && table.config.merge) || {}
     const borderInfo = (table.config && table.config.borderInfo) || {}
@@ -63,7 +63,8 @@ var setRowColSize = function(columnData,rowData, worksheet){
       // console.log(columnNum);
       let temp = worksheet.getColumn(columnNum);
       // console.log('temp',temp);
-      temp.width = v/7;
+      temp.width = v / 7;
+      console.log('width',temp.width);
     })
   }
 
